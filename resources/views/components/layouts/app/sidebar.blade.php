@@ -12,22 +12,27 @@
             </a>
 
             <flux:navlist variant="outline">
-                <flux:navlist.group :heading="__('Platform')" class="grid">
+                <flux:navlist.group :heading="__('Main')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    <flux:navlist.item icon="archive" :href="route('inventory')" :current="request()->routeIs('inventory')" wire:navigate>{{ __('Inventory') }}</flux:navlist.item>
+                </flux:navlist.group>
+                <flux:navlist.group :heading="__('Skills')" class="grid">
+                    <flux:navlist.item icon="pickaxe" :href="route('mining')" :current="request()->routeIs('mining')" wire:navigate>{{ __('Mining') }}</flux:navlist.item>
+                    <flux:navlist.item icon="axe" :href="route('woodcutting')" :current="request()->routeIs('woodcutting')" wire:navigate>{{ __('Woodcutting') }}</flux:navlist.item>
+                    <flux:navlist.item icon="leafy-green" :href="route('foraging')" :current="request()->routeIs('foraging')" wire:navigate>{{ __('Foraging') }}</flux:navlist.item>
+                    <flux:navlist.item icon="sprout" :href="route('farming')" :current="request()->routeIs('farming')" wire:navigate>{{ __('Farming') }}</flux:navlist.item>
+                    <flux:navlist.item icon="fish" :href="route('fishing')" :current="request()->routeIs('fishing')" wire:navigate>{{ __('Fishing') }}</flux:navlist.item>
+                    <flux:navlist.group :heading="__('Processing')" class="grid">
+                        <flux:navlist.item icon="sparkles" :href="route('alchemy')" :current="request()->routeIs('alchemy')" wire:navigate>{{ __('Alchemy') }}</flux:navlist.item>
+                        <flux:navlist.item icon="flask-conical" :href="route('brewing')" :current="request()->routeIs('brewing')" wire:navigate>{{ __('Brewing') }}</flux:navlist.item>
+                        <flux:navlist.item icon="wrench-screwdriver" :href="route('crafting')" :current="request()->routeIs('crafting')" wire:navigate>{{ __('Crafting') }}</flux:navlist.item>
+                        <flux:navlist.item icon="chef-hat" :href="route('cooking')" :current="request()->routeIs('cooking')" wire:navigate>{{ __('Cooking') }}</flux:navlist.item>
+
+                    </flux:navlist.group>
                 </flux:navlist.group>
             </flux:navlist>
 
             <flux:spacer />
-
-            <flux:navlist variant="outline">
-                <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                {{ __('Repository') }}
-                </flux:navlist.item>
-
-                <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                {{ __('Documentation') }}
-                </flux:navlist.item>
-            </flux:navlist>
 
             <!-- Desktop User Menu -->
             <flux:dropdown class="hidden lg:block" position="bottom" align="start">
